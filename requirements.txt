@@ -3,4 +3,3 @@ numpy
 matplotlib
 joblib
 tensorflow
-shapely==1.8.5.post1  # ← Only if you're actually using shapely
