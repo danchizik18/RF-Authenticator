@@ -1,8 +1,6 @@
-numpy
-scipy
-matplotlib
-torch
-torchvision
-scikit-learn
 streamlit
-librosa
+numpy
+pandas
+shapely
+tensorflow
+scikit-learn
