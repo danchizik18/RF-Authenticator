@@ -3,8 +3,6 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 import joblib
-
-
 from glob import glob
 
 st.set_page_config(layout="wide")
@@ -12,13 +10,13 @@ st.title("📡 RF Signal Modulation Classifier")
 
 # Paths
 RAW_DATA_DIR = "data/raw"
-MODEL_PATH = "models/rf_modulation_classifier.h5"
+MODEL_PATH = "models/rf_modulation_classifier.joblib"  # Make sure this exists
 LABELS = ["BPSK", "QPSK", "16QAM"]
 
 # Load model
 @st.cache_resource
 def load_classifier():
-    return load_model(MODEL_PATH)
+    return joblib.load(MODEL_PATH)
 
 model = load_classifier()
 
@@ -65,11 +63,10 @@ st.markdown(f"""
 
 # Table of predictions
 st.subheader("🧾 Segment Predictions")
-pred_df = {
+st.dataframe({
     "Segment": list(range(len(predicted_labels))),
     "Predicted Modulation": predicted_labels
-}
-st.dataframe(pred_df)
+})
 
 # I/Q Time Domain Plots
 st.subheader("📈 I/Q Time Series")
