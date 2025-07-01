@@ -1,5 +1,4 @@
 streamlit
 numpy
 matplotlib
-joblib
-tensorflow
+tensorflow==2.15.0

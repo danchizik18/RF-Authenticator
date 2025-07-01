@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import os
 import matplotlib.pyplot as plt
-import joblib
+from tensorflow.keras.models import load_model
 from glob import glob
 
 st.set_page_config(layout="wide")
@@ -10,13 +10,13 @@ st.title("📡 RF Signal Modulation Classifier")
 
 # Paths
 RAW_DATA_DIR = "data/raw"
-MODEL_PATH = "models/rf_modulation_classifier.joblib"  # Make sure this exists
+MODEL_PATH = "models/rf_modulation_classifier.h5"
 LABELS = ["BPSK", "QPSK", "16QAM"]
 
-# Load model
+# Load TensorFlow model
 @st.cache_resource
 def load_classifier():
-    return joblib.load(MODEL_PATH)
+    return load_model(MODEL_PATH)
 
 model = load_classifier()
 
