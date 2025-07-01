@@ -1,1 +1,4 @@
 .venv/
+*.npy
+logs/
+__pycache__/
