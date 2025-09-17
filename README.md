@@ -77,13 +77,11 @@ streamlit run dashboard.py
 - `tensorflow`
 - `scikit-learn`
 
-> If deploying to Streamlit Cloud, ensure your `requirements.txt` is up to date and your model is stored in `models/rf_modulation_classifier.h5`.
-
 ---
 
 ## 🌐 Live Demo
 
-👉 [Streamlit Cloud App](https://rf-authenticator.streamlit.app) *(replace with your actual app URL if needed)*
+👉 https://signalid.streamlit.app/
 
 ---
 
